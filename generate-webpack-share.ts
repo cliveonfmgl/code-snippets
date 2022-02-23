@@ -3,6 +3,20 @@
   "scripts": {
     "generate-webpack": "ts-node --script-mode ./build/generate-webpack-share.ts",
 
+  Usage in webpack.config.js
+  
+  const webpackShares = require("../webpack-share.js");
+   
+  ...
+
+    new ModuleFederationPlugin({
+      
+      shared: share({
+        ...webpackShares.getShares(),
+        ...sharedMappings.getDescriptors(),
+      }),
+    }),
+
 */
 console.log(`Running webpack generation... ${__dirname}`);
 
