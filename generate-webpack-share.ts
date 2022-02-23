@@ -1,3 +1,9 @@
+/* Usage in package.json
+
+  "scripts": {
+    "generate-webpack": "ts-node --script-mode ./build/generate-webpack-share.ts",
+
+*/
 console.log(`Running webpack generation... ${__dirname}`);
 
 import * as fs from "fs";
@@ -115,7 +121,7 @@ const text = `module.exports = {
     };
   },
   // this is generated from generate-webpack-share.ts using tsconfig.json - check build processes for how
-  deltaShares: function () {
+  localShares: function () {
     return [
       ${getSharedLibraries().join(newLineSpaces)}
     ];
